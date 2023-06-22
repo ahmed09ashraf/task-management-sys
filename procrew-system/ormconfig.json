@@ -4,7 +4,7 @@
     "port": 3306,
     "username": "root",
     "password": "",
-    "database": "nestjs",
+    "database": "pro-crew",
     "entities": ["dist/**/*.entity{.ts,.js}"],
     "synchronize": true
   }
