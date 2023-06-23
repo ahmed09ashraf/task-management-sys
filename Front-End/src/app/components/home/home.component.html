@@ -1,3 +1,13 @@
+
+<h2>Task List</h2>
+<app-task-list></app-task-list>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,20 +45,23 @@
 						<tr>
 							<th>ID</th>
 							<th>TASK NAME</th>
+							<th>TASK Period</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr *ngFor="let task of tasks">
 					
-							<td>1</td>
-							<td>NestJS</td>
+							<td>{{ task.id }}</td>
+							<td>{{ task.title }}</td>
+							<td>{{ task.period }}</td>
+							
 							<td>
 								<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 						
 							<td>1</td>
 							<td>NestJS</td>
@@ -56,7 +69,7 @@
 								<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 				<div class="clearfix">

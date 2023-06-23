@@ -38,7 +38,7 @@ export class TasksController {
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const task = await this.tasksService.findOne(+id);
-    return { name: task.name, period: task.period };
+    return { title: task.title, period: task.period };
   }
 
   @Patch(':id')

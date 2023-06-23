@@ -7,7 +7,6 @@ import {
   JoinTable,
   OneToMany,
 } from 'typeorm';
-// import { Task } from '../../task/entities/task.entity';
 
 @Entity('users')
 export class User {
@@ -17,7 +16,7 @@ export class User {
   @Column()
   name: string;
 
-  @Column(/*{ unique: true }*/)
+  @Column({ unique: true })
   email: string;
 
   @Column()

@@ -9,13 +9,19 @@ export class Task {
   id: number;
 
   @Column()
-  name: string;
+  title: string;
 
   @Column()
   period: string;
 
+  @Column()
+  status: string;
+
   @Column({ default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
+
+  @Column()
+  timeSpent: number;
 
   @ManyToOne(() => User, (user) => user.tasks)
   user: User;

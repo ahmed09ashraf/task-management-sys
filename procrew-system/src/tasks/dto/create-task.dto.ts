@@ -6,6 +6,7 @@ export class CreateTaskDto {
   title: string;
 
   status: string;
+  
   @IsNotEmpty()
   @IsNumber()
   taskPeriod: number;

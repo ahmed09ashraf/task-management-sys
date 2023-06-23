@@ -9,13 +9,21 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {HttpClientModule} from "@angular/common/http";
 import { AuthGuard } from './services/auth.guard';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { TaskDetailsComponent } from './components/task-details/task-details.component';
+import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { UpdateTaskComponent } from './components/update-task/update-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TaskListComponent,
+    TaskDetailsComponent,
+    CreateTaskComponent,
+    UpdateTaskComponent
   ],
   imports: [
     BrowserModule,
