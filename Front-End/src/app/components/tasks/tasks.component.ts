@@ -27,7 +27,7 @@ export class TasksComponent {
   };
 
   delete(id: any) {
-    let text = `Sure ? Delete User #${id}`;
+    let text = `Are You Sure ? Delete Task #${id}`;
     if(confirm(text) == true) {
       this.taskService.DeleteTask(id).subscribe({
         error: (err) => { this.errMsg = err.message },
