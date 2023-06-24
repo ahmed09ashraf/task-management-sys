@@ -9,5 +9,5 @@ export class CreateTaskDto {
   
   @IsNotEmpty()
   @IsNumber()
-  taskPeriod: number;
+  period: number;
 }

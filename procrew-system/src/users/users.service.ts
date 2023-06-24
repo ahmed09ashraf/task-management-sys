@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { CreateUserDto, CreateUserTaskDto } from './dto/create-user.dto';
+import { CreateUserDto, CreateTaskDto } from './dto/create-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
@@ -7,9 +7,21 @@ import { Task } from 'src/tasks/entities/task.entity';
 
 @Injectable()
 export class UsersService {
+  private readonly users = [
+    {
+      userId: 1,
+      email: 'john',
+      password: 'changeme',
+    },
+    {
+      userId: 2,
+      email: 'maria',
+      password: 'guess',
+    },
+  ];
+
   constructor(
     @InjectRepository(User) private userRepository: Repository<User>,
-    @InjectRepository(Task) private taskRepository: Repository<Task>,
   ) {}
 
   create(userDetails: CreateUserDto) {

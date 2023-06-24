@@ -10,6 +10,20 @@ export class TasksService {
   constructor(
     @InjectRepository(Task) private taskRepository: Repository<Task>,
   ) {}
+  
+  // @Cron(CronExpression.EVERY_MINUTE)
+  // async updateTaskStatus(): Promise<void> {
+  //   const tasks = await this.taskRepository.find({ status: 'work on' });
+
+  //   const currentTime = new Date();
+  //   tasks.forEach(async (task) => {
+  //     const elapsedTime = (currentTime.getTime() - task.createdAt.getTime()) / (1000 * 60 * 60);
+  //     if (elapsedTime >= task.period) {
+  //       task.status = 'time finished';
+  //       await this.taskRepository.save(task);
+  //     }
+  //   });
+  // }
 
   create(taskDetails: CreateTaskDto) {
     const newTask = this.taskRepository.create({
@@ -27,11 +41,11 @@ export class TasksService {
     return await this.taskRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateTaskDto: UpdateTaskDto) {
-    return `This action updates a #${id} task`;
+  async update(id: number, updateTaskDto: UpdateTaskDto) {
+    return this.taskRepository.update({ id }, { ...updateTaskDto });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} task`;
+  async remove(id: number) {
+    return this.taskRepository.delete({ id });
   }
 }

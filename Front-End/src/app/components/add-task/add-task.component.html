@@ -1,0 +1,11 @@
+<h3 class="alert alert-primary my-4">Add New User</h3>
+<form (ngSubmit)="Add(title.value, period.value, status.value)" class="d-flex flex-column gap-3">
+    <input type="text" #title placeholder="Name" />
+    <input type="text" #period placeholder="User Name" />
+    <input type="text" #status placeholder="Age" />
+    <input type="submit" value="Add" class="m-auto btn btn-success"/>
+</form>
+
+<div *ngIf="formSubmitted" class="alert alert-success mt-2">
+    <p>User Added Successfully</p>
+</div>

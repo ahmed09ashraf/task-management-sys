@@ -1,1 +1,23 @@
-<p>update-task works!</p>
+<h3 class="alert alert-primary my-4">Update Task #{{task.id}}</h3>
+<form *ngIf="task" (ngSubmit)="update(title.value, period.value, status.value)"
+    class="d-flex flex-column gap-3">
+    <div class="row">
+        <label for="title">Title</label>
+        <input type="text" #title placeholder="title" value="{{task.title}}" />
+    </div>
+    <div class="row">
+        <label for="period">Period</label>
+        <input type="text" #period placeholder="period" value="{{task.period}}" />
+    </div>
+    <div class="row">
+        <label for="age">Status</label>
+        <input type="text" #status placeholder="status" value="{{task.status}}" />
+    </div>
+
+
+    <input type="submit" value="Update" class="m-auto btn btn-success" />
+</form>
+
+<div *ngIf="formSubmitted" class="alert alert-success mt-2">
+    <p>Data Updated Successfully</p>
+</div>

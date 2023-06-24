@@ -26,8 +26,8 @@ export class TasksController {
   // }
 
   @Post()
-  async create(@Body() createUserDto: CreateTaskDto) {
-    return this.tasksService.create(createUserDto);
+  async create(@Body() createTaskDto: CreateTaskDto) {
+    return this.tasksService.create(createTaskDto);
   }
 
   @Get()

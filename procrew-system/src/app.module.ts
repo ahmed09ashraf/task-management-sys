@@ -10,6 +10,7 @@ import { User } from './users/entities/user.entity';
 import { Task } from './tasks/entities/task.entity';
 import { AuthModule } from './auth/auth.module';
 
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -24,6 +25,7 @@ import { AuthModule } from './auth/auth.module';
     }),
     UsersModule,
     TasksModule,
+
     AuthModule,
   ],
   controllers: [/*UserController,*/ AppController],
