@@ -7,8 +7,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
-  styles: [
-  ]
+  styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent {
   tasks: any;

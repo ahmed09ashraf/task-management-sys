@@ -1,6 +1,7 @@
-<div class="d-flex flex-row justify-content-around">
-    <img src="/assets/pro.jpg" style="width:130px ; height:50px ; float: right;" alt="image">
+<div class="d-flex flex-row justify-content-evenly">
+    <!-- <img src="/assets/pro.jpg" style="width:130px ; height:50px ; float: right;" alt="image"> -->
     <a class="btn btn-outline-dark" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact:true}">home</a>
     <a class="btn btn-outline-dark" routerLinkActive="active" routerLink="/add">Add</a>
+    <button class="logout-button" *ngIf="showButton" (click)="logout()">Logout</button>
       
 </div>
