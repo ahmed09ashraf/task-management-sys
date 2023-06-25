@@ -8,6 +8,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class HeaderComponent {
   showButton: boolean;
+  tokenStorage: any;
 
 
   constructor(private router: Router) {
@@ -19,8 +20,7 @@ export class HeaderComponent {
     });
 }
 logout() {
-  // Perform any logout logic here (e.g., clearing session, token, etc.)
-  
+  this.tokenStorage.signOut() ;
   // Redirect to the login page
   this.router.navigateByUrl('/login');
 }
