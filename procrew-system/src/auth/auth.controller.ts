@@ -56,14 +56,8 @@ export class AuthController {
             message: 'success'
         };
     }
-    // catch (error) {
-    //     // Check if the error is a duplicate entry error
-    //     if (error instanceof QueryFailedError && error.message.includes('Duplicate entry')) {
-    //       throw new BadRequestException('Email is already taken');
-    //     }
-  
-    //     throw error; // Re-throw other errors
-    //   }
+
+
     @Get('user')
     async user(@Req() request: Request) {
         try {

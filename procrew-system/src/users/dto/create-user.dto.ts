@@ -8,8 +8,9 @@ export class CreateUserDto {
   public password: string;
 }
 
-export class CreateTaskDto {
-  name: string;
+export class CreateUserTaskDto {
+  title: string;
   period: string;
-  status : string ;
+  status: string ;
+  userUd : number ;
 }

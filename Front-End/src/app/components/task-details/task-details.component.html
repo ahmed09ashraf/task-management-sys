@@ -1,9 +1,10 @@
 <h3 class="alert alert-primary my-4">Details of Task #{{task.id}}</h3>
-<div *ngIf="task ; else falseBlock" class="border p-3">
-    <p>ID: {{task.id}}</p>
-    <p>Title: {{task.title}}</p>
-    <p>Period: {{task.period}}</p>
-    <p>Status: {{task.status}}</p>
+<div *ngIf="task ; else falseBlock" class="border p-3" style="font-size: 20px;">
+    <h4 style="display: flex;">ID :</h4><p>{{task.id}}</p>
+    <h4 style="display: flex;">Title :</h4><p> {{task.title}}</p>
+    <h4 style="display: flex;">Period :</h4><p> {{task.period}} <i>hrs</i></p>
+    <h4 style="display: flex;">Status :</h4><p> {{task.status}}</p>
+    <h4 style="display: flex;">Created At :</h4><p> {{task.createdAt}}</p>
 </div>
 
 <ng-template #falseBlock>

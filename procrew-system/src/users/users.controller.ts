@@ -3,13 +3,11 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
-  Delete,
   ParseIntPipe,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { CreateUserDto, CreateTaskDto } from './dto/create-user.dto';
+import { CreateUserDto, CreateUserTaskDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('users')
@@ -32,21 +30,11 @@ export class UsersController {
     return { name: user.name, email: user.email };
   }
 
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-  //   return this.usersService.update(+id, updateUserDto);
-  // }
-
-  // @Delete(':id')
-  // remove(@Param('id') id: string) {
-  //   return this.usersService.remove(+id);
-  // }
-
-  // @Post(':id/posts')
-  // createUserTask(
-  //   @Param('id', ParseIntPipe) id: number,
-  //   @Body() createUserTaskDto: CreateUserTaskDto,
-  // ) {
-  //   return this.usersService.createUserTask(id, createUserTaskDto);
-  // }
+  @Post(':id/tasks')
+  createUserPost(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() createUserTaskDto: CreateUserTaskDto,
+  ) {
+    return this.usersService.createUserTask(id, createUserTaskDto);
+  }
 }

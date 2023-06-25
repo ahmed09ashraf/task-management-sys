@@ -55,18 +55,19 @@ body {
   }
   
   .heading {
-    margin: 50px auto 12px;
+    margin: 40px auto 10px;
     font-size: 50px;
     font-weight: bolder;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-position: -98px 0;
-    height: 51px;
+    height: 60px;
     width: 177px;
     overflow: hidden;
   }
   
   .field {
-    margin: 10px 0;
+    margin: 15px 0;
+    padding: 5px;
     position: relative;
     font-size: 14px;
     width: 100%;

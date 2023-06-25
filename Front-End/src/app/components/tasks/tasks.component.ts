@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TaskService } from 'src/app/services/tasks.service';
 import { Router } from '@angular/router';
 import { async } from '@angular/core/testing';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tasks',
@@ -12,6 +13,7 @@ import { async } from '@angular/core/testing';
 export class TasksComponent {
   tasks: any;
   errMsg: any;
+  searchText: string ='' ;
   
   constructor(private taskService: TaskService, private router: Router) {
     taskService.GetAllTasks().subscribe(

@@ -1,11 +1,11 @@
-<h3 class="alert alert-primary my-4">Add New User</h3>
+<h3 class="alert alert-primary my-4">Add New Task</h3>
 <form (ngSubmit)="Add(title.value, period.value, status.value)" class="d-flex flex-column gap-3">
     <input type="text" #title placeholder="Title" />
     <input type="text" #period placeholder="Period" />
     <input type="text" #status placeholder="Status" />
-    <input type="submit" value="Add" class="m-auto btn btn-success"/>
+    <input type="submit" value="Add" class="m-auto btn btn-success" style="background-color: rgb(16, 182, 85);"/>
 </form>
 
 <div *ngIf="formSubmitted" class="alert alert-success mt-2">
-    <p>User Added Successfully</p>
+    <p>Task Added Successfully</p>
 </div>

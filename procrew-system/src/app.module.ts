@@ -9,6 +9,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { User } from './users/entities/user.entity';
 import { Task } from './tasks/entities/task.entity';
 import { AuthModule } from './auth/auth.module';
+import { JwtModule } from '@nestjs/jwt';
 
 
 @Module({
@@ -23,12 +24,17 @@ import { AuthModule } from './auth/auth.module';
       entities: [User, Task],
       synchronize: true,
     }),
+    TypeOrmModule.forFeature([User]),
+    JwtModule.register({
+        secret: 'secret',
+        signOptions: {expiresIn: '1d'}
+    }),
     UsersModule,
     TasksModule,
 
     AuthModule,
   ],
-  controllers: [/*UserController,*/ AppController],
-  providers: [AppService /*, UserService*/],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

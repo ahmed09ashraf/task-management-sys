@@ -55,10 +55,14 @@ body {
   }
   
   .heading {
-    margin: 30px auto 5px;
-    font-size: 40px;
+    margin: 30px auto 10px;
+    margin-left: 25%;
+    font-size: 45px;
     font-weight: bolder;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 60px;
+    width: 177px;
+    overflow: hidden;
   }
   
   .field {

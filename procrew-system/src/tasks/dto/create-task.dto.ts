@@ -9,5 +9,9 @@ export class CreateTaskDto {
   
   @IsNotEmpty()
   @IsNumber()
-  period: number;
+  period: string;
+
+  createdAt: Date;
+
+  // userId : number ;
 }

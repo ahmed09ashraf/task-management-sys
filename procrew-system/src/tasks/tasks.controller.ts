@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
   Req,
+  Put,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
@@ -38,10 +39,10 @@ export class TasksController {
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const task = await this.tasksService.findOne(+id);
-    return { title: task.title, period: task.period };
+    return {id : task.id , title: task.title, period: task.period , user :task.userId , status :task.status  , createdAt :task.createdAt };
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
     return this.tasksService.update(+id, updateTaskDto);
   }

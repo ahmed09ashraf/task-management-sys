@@ -20,9 +20,7 @@ export class Task {
   @Column({ default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
 
-  @Column()
-  timeSpent: number;
-
   @ManyToOne(() => User, (user) => user.tasks)
   user: User;
+  userId: any;
 }

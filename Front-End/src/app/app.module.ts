@@ -12,6 +12,8 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
 import { TasksComponent } from './components/tasks/tasks.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { ErrorComponent } from './components/error/error.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FilterPipe } from './components/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ErrorComponent } from './components/error/error.component';
     TasksComponent,
     AddTaskComponent,
     ErrorComponent,
+    HeaderComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

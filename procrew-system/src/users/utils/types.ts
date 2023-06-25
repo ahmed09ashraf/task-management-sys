@@ -1,6 +1,0 @@
-/* eslint-disable prettier/prettier */
-export type CreateUserParams = {
-  name: string;
-  email: string;
-  password: string;
-};
